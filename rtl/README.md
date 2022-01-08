@@ -1,2 +1,2 @@
 ## VGA Timing generator
-HDL for Ben Eater's [VGA] project(https://eater.net/vga)
+HDL for Ben Eater's [VGA](https://eater.net/vga) project.

@@ -1,0 +1,25 @@
+Quartus Prime Archive log --	/media/sf_tmp/BeMicro_Max10_VGA/release/1.0/project_release_1.0.qarlog
+
+Archive:	/media/sf_tmp/BeMicro_Max10_VGA/release/1.0/project_release_1.0.qar
+Date:		Sat Jan  8 15:29:30 2022
+Quartus Prime		21.1.0 Build 842 10/21/2021 SJ Lite Edition
+
+	=========== Files Selected: ===========
+/media/sf_tmp/BeMicro_Max10_VGA/altera/BeMicro_Max10_template/BeMicro_MAX10_top.qpf
+/media/sf_tmp/BeMicro_Max10_VGA/altera/BeMicro_Max10_template/BeMicro_MAX10_top.qsf
+/media/sf_tmp/BeMicro_Max10_VGA/altera/BeMicro_Max10_template/BeMicro_MAX10_top.sdc
+/media/sf_tmp/BeMicro_Max10_VGA/altera/BeMicro_Max10_template/BeMicro_MAX10_top.v
+/media/sf_tmp/BeMicro_Max10_VGA/altera/altera_ip/pll_0.ppf
+/media/sf_tmp/BeMicro_Max10_VGA/altera/altera_ip/pll_0.qip
+/media/sf_tmp/BeMicro_Max10_VGA/altera/altera_ip/pll_0.v
+/media/sf_tmp/BeMicro_Max10_VGA/altera/altera_ip/pll_0_bb.v
+/media/sf_tmp/BeMicro_Max10_VGA/altera/altera_ip/rom_0.qip
+/media/sf_tmp/BeMicro_Max10_VGA/altera/altera_ip/rom_0.v
+/media/sf_tmp/BeMicro_Max10_VGA/altera/altera_ip/rom_0_bb.v
+/media/sf_tmp/BeMicro_Max10_VGA/rtl/vga_timing_generator.sv
+/media/sf_tmp/BeMicro_Max10_VGA/sw/finch.hex
+/opt/intelFPGA_lite/21.1/quartus/linux64/assignment_defaults.qdf
+	======= Total: 14 files to archive =======
+
+	================ Status: ===============
+All files archived successfully.

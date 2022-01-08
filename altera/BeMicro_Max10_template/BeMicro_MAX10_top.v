@@ -26,6 +26,9 @@
 `define ENABLE_PMOD
 //`define ENABLE_CHIPSCOPE
 `define DESIGN_LEVEL_RESET
+`define ENABLE_PLL_0
+`define ENABLE_VGA
+`define ENABLE_VGA_ROM
 
 module BeMicro_MAX10_top (
 
@@ -281,7 +284,10 @@ module BeMicro_MAX10_top (
 `ifdef DESIGN_LEVEL_RESET
 	/* TODO:  Find out how to use Altera GSR */
 	parameter SYS_CLK_FREQ = 'd50_000_000;
-	wire reset,reset_n;assign reset = ~reset_n;assign reset_n = user_reset_cpl;
+	assign reset_n = 
+	 (user_reset_cpl `ifdef ENABLE_PLL_0 & pll_0_lock `endif `ifdef ENABLE_PLL_1 & pll_1_lock `endif);
+	//
+	wire reset,reset_n;assign reset = ~reset_n;
 	reg [25:0] user_reset_cntr;reg [0:0] user_reset_cpl;
 	wire user_reset_button; assign user_reset_button = ~PB[1];
 	//wire user_debug_counter; assign user_debug_counter = ~PB[2];
@@ -314,6 +320,74 @@ always @* begin
 	led_o[1]= 1'b0;
 	led_o[0]= 1'b0;
 end
+
+`ifdef ENABLE_PLL_0
+wire clk10p0, clk40p0, pll_0_lock;
+pll_0
+	pll0
+		(
+			.inclk0(SYS_CLK), //50MHz
+			.c0(clk10p0), // 10MHz
+			.c1(clk40p0), // 40MHz
+			.locked(pll_0_lock)
+		);
+//
+
+`endif
+
+`ifdef ENABLE_VGA
+wire vga_clk; assign vga_clk = clk10p0;
+
+wire [1:0] VGA_RED;
+wire [1:0] VGA_GRN;
+wire [1:0] VGA_BLU;
+
+assign VGA_BLU[1:0] = (blank) ? 2'b00 : rgb_val[1:0]; 
+assign VGA_GRN[1:0] = (blank) ? 2'b00 : rgb_val[3:2]; 
+assign VGA_RED[1:0] = (blank) ? 2'b00 : rgb_val[5:4]; 
+
+assign PMOD_A[3:0] = { vsync, hsync, VGA_BLU[1:0] };
+assign PMOD_D[3:0] = { VGA_RED[1:0], VGA_GRN[1:0] };
+
+wire [5:0] rgb_val;
+wire hsync,vsync,vblank,hblank,blank;
+wire [9:0] y_counter;
+wire [7:0] x_counter;
+assign blank = (vblank|hblank);
+
+wire [13:0] vga_rom_address; // 14-bits of address
+assign vga_rom_address = {y_counter[9:3], x_counter[7:1]}; // 7 + 7
+
+horizontal_generator 
+	vga_horizontal
+		( 
+			.clk(vga_clk),
+			.reset_n(reset_n),
+			.hsync(hsync),
+			.hblank(hblank),
+			.x_counter(x_counter)
+		);
+vertical_generator
+	vga_vertical
+		(
+			.clk(hblank),
+			.reset_n(reset_n),
+			.vsync(vsync),
+			.vblank(vblank),
+			.y_counter(y_counter)
+		);
+// END VGA SECTION		
+`endif
+
+`ifdef ENABLE_VGA_ROM
+rom_0 
+	finch
+		(
+			.address(vga_rom_address),
+			.clock(vga_clk),
+			.q(rgb_val)
+		);
+`endif
 
 
 endmodule

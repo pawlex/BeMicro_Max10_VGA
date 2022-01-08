@@ -1,0 +1,94 @@
+Archive Project report for BeMicro_MAX10_top
+Sat Jan  8 15:29:31 2022
+Quartus Prime Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Archive Project Summary
+  3. Archive Project Messages
+  4. Files Archived
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2021  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++----------------------------------------------------------------+
+; Archive Project Summary                                        ;
++------------------------+---------------------------------------+
+; Archive Project Status ; Successful - Sat Jan  8 15:29:31 2022 ;
+; Revision Name          ; BeMicro_MAX10_top                     ;
+; Top-level Entity Name  ; BeMicro_MAX10_top                     ;
+; Family                 ; MAX 10                                ;
++------------------------+---------------------------------------+
+
+
++--------------------------+
+; Archive Project Messages ;
++--------------------------+
+Info: File Set 'Source control' contains:
+    Info: Project source and settings files
+    Info: Automatically detected source files
+Warning: Hierarchical Platform Designer systems and custom IP components(_hw.tcl and associated files) are not archived by the Quartus Archiver
+Info: Archive will store files relative to the closest common parent directory
+Info (13213): Using common directory /media/sf_tmp/BeMicro_Max10_VGA/
+Info: ----------------------------------------------------------
+Info: ----------------------------------------------------------
+Info: Generated archive '/media/sf_tmp/BeMicro_Max10_VGA/release/1.0/project_release_1.0.qar'
+Info: ----------------------------------------------------------
+Info: ----------------------------------------------------------
+Info: Generated report 'BeMicro_MAX10_top.archive.rpt'
+Info (23030): Evaluation of Tcl script /opt/intelFPGA_lite/21.1/quartus/common/tcl/apps/qpm/qar.tcl was successful
+Info: Quartus Prime Shell was successful. 0 errors, 21 warnings
+    Info: Peak virtual memory: 597 megabytes
+    Info: Processing ended: Sat Jan  8 15:29:31 2022
+    Info: Elapsed time: 00:00:41
+    Info: Total CPU time (on all processors): 00:01:00
+
+
++------------------------------------------------------------------+
+; Files Archived                                                   ;
++------------------------------------------------------------------+
+; File Name                                                        ;
++------------------------------------------------------------------+
+; ../altera_ip/pll_0.ppf                                           ;
+; ../altera_ip/pll_0.qip                                           ;
+; ../altera_ip/pll_0.v                                             ;
+; ../altera_ip/pll_0_bb.v                                          ;
+; ../altera_ip/rom_0.qip                                           ;
+; ../altera_ip/rom_0.v                                             ;
+; ../altera_ip/rom_0_bb.v                                          ;
+; /media/sf_tmp/BeMicro_Max10_VGA/altera/altera_ip/pll_0.qip       ;
+; /media/sf_tmp/BeMicro_Max10_VGA/altera/altera_ip/pll_0.v         ;
+; /media/sf_tmp/BeMicro_Max10_VGA/altera/altera_ip/rom_0.qip       ;
+; /media/sf_tmp/BeMicro_Max10_VGA/altera/altera_ip/rom_0.v         ;
+; /media/sf_tmp/BeMicro_Max10_VGA/rtl/vga_timing_generator.sv      ;
+; /media/sf_tmp/BeMicro_Max10_VGA/sw/finch.hex                     ;
+; /opt/intelFPGA_lite/21.1/quartus/linux64/assignment_defaults.qdf ;
+; BeMicro_MAX10_top.qpf                                            ;
+; BeMicro_MAX10_top.qsf                                            ;
+; BeMicro_MAX10_top.sdc                                            ;
+; BeMicro_MAX10_top.v                                              ;
++------------------------------------------------------------------+
+
+

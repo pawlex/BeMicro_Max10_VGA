@@ -1,0 +1,18 @@
+#!/bin/sh
+iverilog -DSIMULATION=1 -o out.vvp ./tb.v ./vga_timing_generator.sv
+ 
+vvp out.vvp
+
+GTKWAVEPID=`ps a | grep gtkwave | grep -v "grep" | awk '{print $1}'`
+if [ -z $GTKWAVEPID ]; then 
+    gtkwave -r gtkwaverc dump.vcd&
+fi
+
+if [ ! -z $GTKWAVEPID ]; then 
+    printf "\n"
+    printf "GTKWAVE already running: $GTKWAVEPID \n"
+    echo "CTRL+SHIFT+R to reload waveform in GTKWAVE"
+    printf "\n"
+fi
+
+
